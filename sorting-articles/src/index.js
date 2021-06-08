@@ -1,9 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
-import {applyPolyfills, defineCustomElements} from 'h8k-components/loader';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import { applyPolyfills, defineCustomElements } from "h8k-components/loader";
 
 const ARTICLES = [
   {
@@ -43,9 +42,8 @@ const ARTICLES = [
   },
 ];
 
-ReactDOM.render(<App articles={ARTICLES} />, document.getElementById('root'));
-registerServiceWorker();
+ReactDOM.render(<App articles={ARTICLES} />, document.getElementById("root"));
 
 applyPolyfills().then(() => {
-    defineCustomElements(window);
-})
+  defineCustomElements(window);
+});

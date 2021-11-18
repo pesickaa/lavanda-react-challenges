@@ -1,6 +1,11 @@
 import React from "react";
+import { Article } from "../articles";
 
-function Articles() {
+interface ArticleProps {
+  articles?: Article[]
+}
+
+function Articles(props: ArticleProps) {
   return (
     <div className="card w-50 mx-auto">
       <table>

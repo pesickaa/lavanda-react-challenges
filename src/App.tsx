@@ -1,15 +1,15 @@
 import React from "react";
 import "./App.css";
-import "h8k-components";
 
+import { Article } from "./articles";
 import Articles from "./components/Articles";
 
 const title = "Sorting Articles";
 
-function App({ articles }) {
+function App({ articles }: { articles: Article[] }) {
   return (
     <div className="App">
-      <h8k-navbar header={title}></h8k-navbar>
+      <div className="headerbar">{title}</div>
       <div className="layout-row align-items-center justify-content-center my-20 navigation">
         <label className="form-hint mb-0 text-uppercase font-weight-light">
           Sort By
@@ -21,7 +21,7 @@ function App({ articles }) {
           Most Recent
         </button>
       </div>
-      <Articles articles={articles} />
+      <Articles />
     </div>
   );
 }

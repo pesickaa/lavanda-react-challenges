@@ -2,10 +2,10 @@ import React from "react";
 import { Article } from "../articles";
 
 interface ArticleProps {
-  articles?: Article[]
+  articles?: Article[];
 }
 
-function Articles(props: ArticleProps) {
+const Articles: React.FC<ArticleProps> = ({ articles }) => {
   return (
     <div className="card w-50 mx-auto">
       <table>
@@ -26,6 +26,6 @@ function Articles(props: ArticleProps) {
       </table>
     </div>
   );
-}
+};
 
 export default Articles;

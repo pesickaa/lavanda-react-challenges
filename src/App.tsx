@@ -6,7 +6,7 @@ import Articles from "./components/Articles";
 
 const title = "Sorting Articles";
 
-function App({ articles }: { articles: Article[] }) {
+const App: React.FC<{ articles: Article[] }> = ({ articles }) => {
   return (
     <div className="App">
       <div className="headerbar">{title}</div>
@@ -24,6 +24,6 @@ function App({ articles }: { articles: Article[] }) {
       <Articles />
     </div>
   );
-}
+};
 
 export default App;

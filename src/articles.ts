@@ -1,10 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
-import { applyPolyfills, defineCustomElements } from "h8k-components/loader";
+export interface Article {
+  title: string;
+  upvotes: number;
+  date: string;
+}
 
-const ARTICLES = [
+export const ARTICLES: Article[] = [
   {
     title: "A message to our customers",
     upvotes: 12,
@@ -41,9 +41,3 @@ const ARTICLES = [
     date: "2010-12-31",
   },
 ];
-
-ReactDOM.render(<App articles={ARTICLES} />, document.getElementById("root"));
-
-applyPolyfills().then(() => {
-  defineCustomElements(window);
-});

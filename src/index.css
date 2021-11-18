@@ -1,1 +1,12 @@
 @import "../node_modules/h8k-design/dist/index.css";
+
+.headerbar {
+  width: 100%;
+  background-color: #303842;
+  color: #179e42;
+  height: 50px;
+  justify-content: center;
+  display: flex;
+  font-size: 25px;
+  padding-top: 10px;
+}

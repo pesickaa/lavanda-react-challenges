@@ -1,6 +1,11 @@
 import React from "react";
+import { Article } from "../articles";
 
-function Articles() {
+interface ArticleProps {
+  articles?: Article[];
+}
+
+const Articles: React.FC<ArticleProps> = ({ articles }) => {
   return (
     <div className="card w-50 mx-auto">
       <table>
@@ -21,6 +26,6 @@ function Articles() {
       </table>
     </div>
   );
-}
+};
 
 export default Articles;

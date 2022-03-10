@@ -18,7 +18,7 @@ The app must have the following functionalities:
 - Clicking on the "Most Recent" button should reorder and display the articles by date in descending order.
 - You can assume that each article has a unique publish date and number of upvotes.
 
-Your task is to complete the implementation of `src/App.js` and `src/components/Articles.js`.
+Your task is to complete the implementation of `src/App.tsx` and `src/components/Articles.tsx`.
 
 The following data-testid attributes are required in the component for the tests to pass:
 

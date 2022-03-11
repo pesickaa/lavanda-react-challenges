@@ -3,6 +3,7 @@ import App from "./App";
 import { render, within, fireEvent, cleanup } from "@testing-library/react";
 
 import "@testing-library/jest-dom/extend-expect";
+import { Article } from "./articles";
 
 const testIds = {
   mostUpvotedLink: "most-upvoted-link",
@@ -48,27 +49,41 @@ const articles = [
   },
 ];
 
-const mostUpvotedArticles = articles.concat().sort((a, b) => {
-  if (a.upvotes > b.upvotes) {
-    return -1;
-  }
-  if (a.upvotes < b.upvotes) {
-    return 1;
-  }
-  return 0;
-});
+const mostUpvotedArticles: Article[] = [
+  { title: "Artificial Mountains", upvotes: 200, date: "2019-11-23" },
+  {
+    title: "Simple text editor has 15k monthly users",
+    upvotes: 83,
+    date: "2020-02-22",
+  },
+  { title: "Scaling to 100k Users", upvotes: 72, date: "2019-10-21" },
+  { title: "the Emu War", upvotes: 24, date: "2018-04-01" },
+  { title: "Alphabet earnings", upvotes: 22, date: "2011-11-23" },
+  {
+    title: "A message to our customers",
+    upvotes: 12,
+    date: "2019-10-22",
+  },
+  { title: "What's SAP", upvotes: 1, date: "2017-01-21" },
+];
 
-const mostRecentArticles = articles.concat().sort((a, b) => {
-  const aDate = new Date(a.date);
-  const bDate = new Date(b.date);
-  if (aDate > bDate) {
-    return -1;
-  }
-  if (aDate < bDate) {
-    return 1;
-  }
-  return 0;
-});
+const mostRecentArticles: Article[] = [
+  {
+    title: "Simple text editor has 15k monthly users",
+    upvotes: 83,
+    date: "2020-02-22",
+  },
+  { title: "Artificial Mountains", upvotes: 200, date: "2019-11-23" },
+  {
+    title: "A message to our customers",
+    upvotes: 12,
+    date: "2019-10-22",
+  },
+  { title: "Scaling to 100k Users", upvotes: 72, date: "2019-10-21" },
+  { title: "the Emu War", upvotes: 24, date: "2018-04-01" },
+  { title: "What's SAP", upvotes: 1, date: "2017-01-21" },
+  { title: "Alphabet earnings", upvotes: 22, date: "2011-11-23" },
+];
 
 const renderApp = () => render(<App articles={articles} />);
 
@@ -78,7 +93,7 @@ afterEach(() => {
   cleanup();
 });
 
-const expectArticles = (articles, expectedArticles) => {
+const expectArticles = (articles: Article[], expectedArticles: Articles[]) => {
   expect(articles).toHaveLength(expectedArticles.length);
   articles.forEach((article, i) => {
     const title = within(article).getByTestId("article-title").textContent;
@@ -95,7 +110,6 @@ const expectArticles = (articles, expectedArticles) => {
 
 test("Initial articles render correctly", () => {
   const { getByTestId, queryAllByTestId } = renderApp();
-
   const articles = queryAllByTestId(testIds.article);
   expectArticles(articles, mostUpvotedArticles);
 });

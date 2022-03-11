@@ -13,10 +13,13 @@ The app must have the following functionalities:
   - title: The title of the article [STRING]
   - upvotes: The number of upvotes for an article [NUMBER]
   - date: The publish date for the article in the format YYYY-MM-DD [STRING]
+- A component that renders a article row.
 - By default, the articles should be displayed in the table ordered by the number of upvotes in descending order.
 - Clicking on the "Most Upvoted" button should reorder and display the articles by the number of upvotes in descending order.
 - Clicking on the "Most Recent" button should reorder and display the articles by date in descending order.
 - You can assume that each article has a unique publish date and number of upvotes.
+- Nice to have: Clicking sort button should toggle sort direction
+- Nice to have: Filter by title.
 
 Your task is to complete the implementation of `src/App.tsx` and `src/components/Articles.tsx`.
 

@@ -93,7 +93,7 @@ afterEach(() => {
   cleanup();
 });
 
-const expectArticles = (articles: Article[], expectedArticles: Articles[]) => {
+const expectArticles = (articles:  HTMLElement[], expectedArticles: Article[]) => {
   expect(articles).toHaveLength(expectedArticles.length);
   articles.forEach((article, i) => {
     const title = within(article).getByTestId("article-title").textContent;

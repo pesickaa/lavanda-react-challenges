@@ -19,7 +19,7 @@ The app must have the following functionalities:
 - [X] - Clicking on the "Most Recent" button should reorder and display the articles by date in descending order.
 - [X] - You can assume that each article has a unique publish date and number of upvotes.
 - [X] - Nice to have: Clicking sort button should toggle sort direction
-- [_] - Nice to have: Filter by title.
+- [X] - Nice to have: Filter by title.
 
 Your task is to complete the implementation of `src/App.tsx` and `src/components/Articles.tsx`.
 

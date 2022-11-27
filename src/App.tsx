@@ -26,6 +26,7 @@ const App: React.FC<{ articles: Article[] }> = ({ articles }) => {
 
   const [sortKey, setSortKey] = useState<SortKeys>('upvotes');
   const [sortOrder, setSortOrder] = useState<SortOrder>('desc');
+  const [query, setQuery] = useState('');
 
   function SortBy(key: string) {
     setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')
@@ -48,7 +49,15 @@ const App: React.FC<{ articles: Article[] }> = ({ articles }) => {
           Most Recent
         </button>
       </div>
-      <Articles articles={sortedData} />
+      <div className="layout-row align-items-center justify-content-center my-20 navigation">
+        <label className="form-hint mb-0 text-uppercase font-weight-light">
+          Filter By
+        </label>
+        <form>
+          <input data-testid="filtered-title" className="small" placeholder="Title" name="title"  type="search" value={query} onChange={event => setQuery(event.target.value)} />
+        </form>
+      </div>
+        <Articles articles={sortedData.filter(article => article.title.includes(query) || query === '')} />
     </div>
   );
 };

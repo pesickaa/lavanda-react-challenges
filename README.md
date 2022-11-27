@@ -8,29 +8,29 @@ The app has one component named Articles. The list of articles to be displayed i
 
 The app must have the following functionalities:
 
-- The list of articles is passed to the App component as a prop in the form of an array of objects.
-- Each article has the following three properties:
-  - title: The title of the article [STRING]
-  - upvotes: The number of upvotes for an article [NUMBER]
-  - date: The publish date for the article in the format YYYY-MM-DD [STRING]
-- A component that renders a article row.
-- By default, the articles should be displayed in the table ordered by the number of upvotes in descending order.
-- Clicking on the "Most Upvoted" button should reorder and display the articles by the number of upvotes in descending order.
-- Clicking on the "Most Recent" button should reorder and display the articles by date in descending order.
-- You can assume that each article has a unique publish date and number of upvotes.
-- Nice to have: Clicking sort button should toggle sort direction
-- Nice to have: Filter by title.
+- [X] - The list of articles is passed to the App component as a prop in the form of an array of objects.
+- [X] - Each article has the following three properties:
+  - [X] - title: The title of the article [STRING]
+  - [X] - upvotes: The number of upvotes for an article [NUMBER]
+  - [X] - date: The publish date for the article in the format YYYY-MM-DD [STRING]
+- [X] - A component that renders a article row.
+- [X] - By default, the articles should be displayed in the table ordered by the number of upvotes in descending order.
+- [X] - Clicking on the "Most Upvoted" button should reorder and display the articles by the number of upvotes in descending order.
+- [X] - Clicking on the "Most Recent" button should reorder and display the articles by date in descending order.
+- [X] - You can assume that each article has a unique publish date and number of upvotes.
+- [X] - Nice to have: Clicking sort button should toggle sort direction
+- [_] - Nice to have: Filter by title.
 
 Your task is to complete the implementation of `src/App.tsx` and `src/components/Articles.tsx`.
 
 The following data-testid attributes are required in the component for the tests to pass:
 
-- The button to reorder and display the most upvoted articles must have the data-testid attribute "most-upvoted-link".
-- The button to reorder and display the most recent articles must have the data-testid attribute "most-recent-link".
-- Each article must be rendered inside a `<tr>` element that has the data-testid attribute "article".
-- The title of each article must be rendered in a `<td>` element that has the data-testid attribute "article-title".
-- The number of upvotes of each article must be rendered in a `<td>` element that has the data-testid attribute "article-upvotes".
-- The publish date of each article must be rendered in a `<td>` element that has the data-testid attribute "article-date".
+- [X] - The button to reorder and display the most upvoted articles must have the data-testid attribute "most-upvoted-link".
+- [X] - The button to reorder and display the most recent articles must have the data-testid attribute "most-recent-link".
+- [X] - Each article must be rendered inside a `<tr>` element that has the data-testid attribute "article".
+- [X] - The title of each article must be rendered in a `<td>` element that has the data-testid attribute "article-title".
+- [X] - The number of upvotes of each article must be rendered in a `<td>` element that has the data-testid attribute "article-upvotes".
+- [X] - The publish date of each article must be rendered in a `<td>` element that has the data-testid attribute "article-date".
 
 ## Environment
 

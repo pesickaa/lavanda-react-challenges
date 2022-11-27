@@ -1,8 +1,9 @@
 import React from "react";
 import { Article } from "../articles";
+import ArticleRow from "./ArticleRow";
 
 interface ArticleProps {
-  articles?: Article[];
+  articles: Article[];
 }
 
 const Articles: React.FC<ArticleProps> = ({ articles }) => {
@@ -17,11 +18,13 @@ const Articles: React.FC<ArticleProps> = ({ articles }) => {
           </tr>
         </thead>
         <tbody>
-          <tr data-testid="article" key="article-index">
-            <td data-testid="article-title">Article 1 title</td>
-            <td data-testid="article-upvotes">Article 1 title</td>
-            <td data-testid="article-date">Article 1 title</td>
-          </tr>
+          {articles.map((article) => {
+            return (
+              <tr data-testid="article" key={article.id}>
+                <ArticleRow article={article} key={article.id} />
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
